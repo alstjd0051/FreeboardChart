@@ -8,6 +8,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import PhoneLogo from "../../../public/img/phoneLogo.png";
 import Avatar from "../../../public/img/avatar.png";
+import Link from "next/link";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -108,7 +109,9 @@ const Phone = () => {
   };
   return (
     <div className="flex gap-5 items-center justify-evenly w-full  ">
-      <Image src={PhoneLogo} width={50} height={50} alt="Logo" />
+      <Link href={"/"}>
+        <Image src={PhoneLogo} width={50} height={50} alt="Logo" />
+      </Link>
       <div className="relative border-2 flex items-center  border-black rounded-full overflow-hidden w-10/12 h-14  ">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <svg
@@ -149,7 +152,7 @@ const Phone = () => {
 const Hambuger = ({ closeMenu }: any) => {
   const [Open, setOpen] = useState(false);
   return (
-    <div className="bg-[#D11C1C] absolute min-w-[40rem] h-screen  top-5 rounded-xl -right-7  py-4 px-8 text-white  ">
+    <div className="bg-[#D11C1C] absolute min-w-[40rem] h-screen  top-5 rounded-xl -right-7  py-4 px-8 text-white z-50 ">
       <div className="flex justify-around ">
         <div className="flex pb-3  border-b-2 w-full  items-center justify-between gap-10 mt-10  ">
           <div className="flex items-center">
