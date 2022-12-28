@@ -8,17 +8,29 @@ import {
   CategoryScale, // x axios
   LinearScale, // y axios
   PointElement,
+  Title,
+  Legend,
+  Tooltip,
 } from "chart.js";
+import { faker } from "@faker-js/faker";
 
-ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
-type Props = {};
+const labels = ["January", "February", "March", "April", "May", "June", "July"];
+
 const data = {
-  labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6"],
+  labels,
   datasets: [
     {
-      label: "Dataset",
-      data: { count: 6, min: -100, max: 100 },
+      data: labels.map(() => faker.datatype.number({})),
       borderColor: "red",
       fill: false,
       stepped: true,
@@ -26,10 +38,22 @@ const data = {
   ],
 };
 
-const SteppedLineChart = (props: Props) => {
+const option = {
+  responsive: true,
+  plugins: {
+    legend: {
+      display: false,
+    },
+    title: {
+      display: false,
+    },
+  },
+};
+
+const SteppedLineChart = () => {
   return (
     <div className=" max-w-2xl ">
-      <Line data={data} />
+      <Line data={data} options={option} />
       <div className="relative flex justify-end ">
         <Image src={MoreButtonRed} alt="" className=" w-5 h-5" />
       </div>

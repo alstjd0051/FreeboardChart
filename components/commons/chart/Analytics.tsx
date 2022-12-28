@@ -1,6 +1,4 @@
 import React from "react";
-import LineChartCard from "../../../public/img/LineChartCard.png";
-import Image from "next/image";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -12,6 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import { faker } from "@faker-js/faker";
 
 ChartJS.register(
   CategoryScale,
@@ -24,34 +23,36 @@ ChartJS.register(
 );
 
 export const options = {
-  responsive: true,
+  responsive: false,
   plugins: {
-    title: {
+    legend: {
       display: false,
-      text: "Line Chart",
+    },
+    interaction: {
+      mode: "index" as const,
+      intersect: false,
+    },
+    title: {
+      display: true,
+      text: "Analytics",
     },
   },
 };
-const labels = ["01/20", "02/20", "03/20"];
+const labels = ["01/2000", "02/20", "03/20"];
 
 const data = {
   labels,
   datasets: [
     {
-      data: [60, 30, 50],
+      data: labels.map(() => faker.datatype.number({})),
       borderColor: "rgb(255, 99, 132)",
       backgroundColor: "rgba(255, 99, 132, 0.5)",
-      fill: false,
     },
   ],
 };
 
 const Analytics = () => {
-  return (
-    <div className="">
-      <Line options={options} data={data} />
-    </div>
-  );
+  return <Line options={options} data={data} />;
 };
 
 export default Analytics;
