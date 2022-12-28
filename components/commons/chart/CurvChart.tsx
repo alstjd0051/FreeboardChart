@@ -1,6 +1,8 @@
 import React from "react";
 
-const CurvChart = () => {
+type Props = {};
+
+const CurvChart = (props: Props) => {
   return <div>CurvChart</div>;
 };
 

@@ -10,6 +10,7 @@ import {
   AdjustmentsVerticalIcon,
   Cog6ToothIcon,
 } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 const NavBar = () => {
   return (
@@ -37,10 +38,10 @@ const NavBar = () => {
             </div>
           </div>
           <div className="my-20 w-full  ">
-            <div className="Nav hover:border-l-4  hover:pl-2 ">
+            <Link href={"/"} className="Nav hover:border-l-4  hover:pl-2 ">
               <HomeIcon className=" NavIcon " />
               <p className="hidden xl:block">Home</p>
-            </div>
+            </Link>
             <div className="Nav hover:border-l-4 hover:pl-2 ">
               <FolderIcon className="NavIcon  " />
               <p className="hidden xl:block">File</p>

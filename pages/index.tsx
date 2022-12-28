@@ -39,7 +39,7 @@ const Home: NextPage = () => {
                 </div>
                 <Image src={Card} alt="" />
               </div>
-              <div>
+              <div className="max-w-full ">
                 <LineChart />
               </div>
             </div>
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="xl:col-span-2 grid-cols-2 ">
-            <div className="mb-2 shadow-lg rounded-md overflow-hidden">
+            <div className="mb-2 shadow-lg rounded-md overflow-hidden max-h-32 ">
               <Analytics />
             </div>
             <div className="w-1/3 lg:w-full">
