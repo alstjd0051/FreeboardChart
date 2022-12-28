@@ -51,11 +51,11 @@ const Home: NextPage = () => {
               <SteppedLineChart />
             </div>
           </div>
-          <div className="xl:col-span-2 grid-cols-2 ">
-            <div className="mb-2 shadow-lg rounded-md overflow-hidden max-h-32 ">
+          <div className="xl:col-span-2 grid-cols-2  ">
+            <div className="mb-2 shadow-lg rounded-md col-span-1 overflow-hidden   ">
               <Analytics />
             </div>
-            <div className="w-1/3 lg:w-full">
+            <div className="w-1/3 lg:w-full col-span-1 ">
               <div
                 className=" rounded-md px-3 py-2 
               flex justify-around items-center shadow-md  "
