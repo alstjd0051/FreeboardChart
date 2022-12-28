@@ -1,86 +1,141 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import type { NextPage } from "next";
+import Head from "next/head";
+import Image from "next/image";
+
+import Card from "../public/img/masterCard.png";
+import CopyImg from "../public/img/CopyImg.png";
+import DownImg from "../public/img/DownImg.png";
+import MoreButton from "../public/img/MoreButton.png";
+import MoreButtonRed from "../public/img/MoreButtonRed.png";
+import ChartGraph from "../public/img/ChartGraph.png";
+// import CurvChart from "../public/img/CurvChart.png";
+import LineChart from "../components/commons/chart/LineChart";
+import Analytics from "../components/commons/chart/Analytics";
+import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
+import SteppedLineChart from "../components/commons/chart/SteppedLineChart";
+import Calendar from "../components/commons/chart/Calendar";
+import CurvChart from "../components/commons/chart/CurvChart";
 
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
-
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and its API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <main className="w-full px-5 xl:grid grid-cols-7 h-full ">
+      <div className="lg:col-span-4 sm:flex-col ">
+        <div className="bg-white w-full shadow-md p-5 rounded-md  ">
+          <h1 className="text-black font-bold  text-xl">Welcome back Julie!</h1>
+          <ul className="text-sm text-black px-5 list-disc marker:text-[#D11E1E]">
+            <li>Since your last login on the system, there were:</li>
+            <li>21 new charts</li>
+            <li>15 new reports</li>
+            <li>45 new messages</li>
+          </ul>
         </div>
-      </main>
+        <div className="grid lg:grid-cols-2  xl:grid-cols-5 gap-3 lg:gap-5 py-2  ">
+          <div className="xl:col-span-3 flex-col  ">
+            <div className="shadow-md rounded-xl py-2 px-3">
+              <div className="flex items-center justify-between ">
+                <div className="flex-col">
+                  <h1 className="font-bold">$ 9.564</h1>
+                  <p>Card Balance </p>
+                </div>
+                <Image src={Card} alt="" />
+              </div>
+              <div>
+                <LineChart />
+              </div>
+            </div>
+            <div className="shadow-md rounded-xl py-2 w-full px-6 flex-col ">
+              <div className="flex justify-between ">
+                <h1 className="font-bold">Statistics</h1>
+                <EllipsisVerticalIcon className="w-6 " />
+              </div>
+              <SteppedLineChart />
+            </div>
+          </div>
+          <div className="xl:col-span-2 grid-cols-2 ">
+            <div className="mb-2 shadow-lg rounded-md overflow-hidden">
+              <Analytics />
+            </div>
+            <div className="w-1/3 lg:w-full">
+              <div
+                className=" rounded-md px-3 py-2 
+              flex justify-around items-center shadow-md  "
+              >
+                <div className="flex-col">
+                  <p>$223K</p>
+                  <p>Earned This Month</p>
+                </div>
+                <Image src={MoreButtonRed} alt="" className="w-10 h-10" />
+              </div>
+              <div className=" rounded-md px-3 py-2 my-5 flex justify-around  shadow-md ">
+                <div className="w-20 h-20">
+                  <Image src={ChartGraph} alt="" />
+                </div>
+                <div className="flex-col">
+                  <p className="font-bold text-xl">Status</p>
+                  <p className="text-sm text-gray-500">Growth</p>
+                  <h1 className="pt-3 font-bold text-2xl">4.312</h1>
+                </div>
+                <EllipsisVerticalIcon className="w-7 h-7" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-1 xl:grid-cols-1 col-span-2  lg:col-span-3 md:px-3">
+        <div>
+          <div className="pb-2 ">
+            {/* <Image src={CurvChart} alt="" className="max-w-full" /> */}
+            <CurvChart />
+          </div>
+          <div className="grid grid-cols-4  gap-2   ">
+            <div className="bg-[#2D62ED] rounded-md text-white p-3 flex-col flex  ">
+              <Image src={CopyImg} alt="" />
+              <div className="flex-col pt-1 ">
+                <h1>2.8K</h1>
+                <p>Monthly Invoices</p>
+              </div>
+              <div className="flex  w-full justify-end ">
+                <Image src={MoreButton} alt="" />
+              </div>
+            </div>
+            <div className=" bg-[#7D00B5] rounded-md text-white p-3">
+              <Image src={DownImg} alt="" />
+              <div className="flex-col pt-1 ">
+                <h1>41.7K</h1>
+                <p>Monthly Invoices</p>
+              </div>
+              <div className="flex  w-full justify-end ">
+                <Image src={MoreButton} alt="" />
+              </div>
+            </div>
+            <div className=" bg-[#D11C1C] rounded-md text-white p-3">
+              <Image src={DownImg} alt="" />
+              <div className="flex-col pt-1 ">
+                <h1>41.7K</h1>
+                <p>Monthly Invoices</p>
+              </div>
+              <div className="flex  w-full justify-end ">
+                <Image src={MoreButton} alt="" />
+              </div>
+            </div>
+            <div className=" bg-[#39D5CF] rounded-md text-white p-3">
+              <Image src={DownImg} alt="" />
+              <div className="flex-col pt-1 ">
+                <h1>41.7K</h1>
+                <p>Monthly Invoices</p>
+              </div>
+              <div className="flex  w-full justify-end ">
+                <Image src={MoreButton} alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className=" overflow-hidden ">
+          <Calendar />
+        </div>
+      </div>
+    </main>
+  );
+};
 
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
-      </footer>
-    </div>
-  )
-}
-
-export default Home
+export default Home;
